@@ -1,0 +1,1 @@
+# amplify-auth-with-auth-rules
