@@ -1,0 +1,13 @@
+type  Blog @model 
+  @key(name: "blogsByUser", fields: ["user"], queryField: "blogsByUser")
+  @auth( rules: [
+    {allow: owner, ownerField: "user"},
+    {allow: public, operations: [read]}
+  ]) {
+  id: ID!
+  user: String
+  name: String
+  email: String
+  video_url: String
+}
+
