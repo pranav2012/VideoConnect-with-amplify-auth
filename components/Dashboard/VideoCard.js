@@ -11,32 +11,31 @@ export default function VideoCard({val}) {
     const [name, setname] = useState("");
 
     useEffect(() => {
+        const fetchPosts = async () => { //fetch filename to search in S3Bucket
+            if(val.id) {
+                let id = val.id;
+                const data = await API.graphql({
+                    query:getBlog,
+                    variables:{ id }
+                   });
+                   setpost(data.data.getBlog);
+                   setname(val.name);
+               }
+           }
         fetchPosts();
      }, [val]);
 
-     const fetchPosts = async () => { //fetch filename to search in S3Bucket
-         if(val.id) {
-             let id = val.id;
-             const data = await API.graphql({
-                 query:getBlog,
-                 variables:{ id }
-                });
-                setpost(data.data.getBlog);
-                setname(val.name);
+         useEffect(() =>{
+            const GetURL = async () =>{ //get s3 video url
+                if(post){
+                    const file = await Storage.get(post.video_url);
+                    seturl(file);
+                }
             }
-        }
-
-        useEffect(() =>{
            GetURL();
         },[post])
 
-        const GetURL = async () =>{ //get s3 video url
-            if(post){
-                const file = await Storage.get(post.video_url);
-                seturl(file);
-            }
-        }
-        
+               
         const OnVideoClick = () =>{ //play pause the video
         if (isvideoplaying){
             videoref.current.pause();

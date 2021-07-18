@@ -1,6 +1,5 @@
 import {AiFillFacebook} from 'react-icons/ai'
 import {FcGoogle} from 'react-icons/fc';
-import { useEffect } from 'react';
 import {Auth} from 'aws-amplify';
 import '../../AmpifyConfig';
 

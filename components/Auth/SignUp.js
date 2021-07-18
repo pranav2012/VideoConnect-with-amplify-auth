@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import OAuth from './OAuth';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import validator from 'validator'
 
 

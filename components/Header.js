@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 import { RiUploadCloudFill,RiLogoutCircleRLine } from 'react-icons/ri';
 import UploadVideo from '../components/Dashboard/UploadVideo';
 import { useRef } from 'react';
