@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "celebrythm7869cc6d_identitypool_7869cc6d",
+    "identityPoolName": "videoapp737e74da_identitypool_737e74da",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "celebr7869cc6d",
-    "userPoolName": "celebrythm7869cc6d_userpool_7869cc6d",
+    "resourceNameTruncated": "videoa737e74da",
+    "userPoolName": "videoapp737e74da_userpool_737e74da",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "celebr7869cc6d_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "videoa737e74da_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "7869cc6d",
-    "resourceName": "celebrythm7869cc6d",
+    "sharedId": "737e74da",
+    "resourceName": "videoapp737e74da",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -50,7 +50,7 @@
     "usernameAttributes": [
         "email"
     ],
-    "hostedUIDomainName": "celebrythm7869cc6d-7869cc6d",
+    "hostedUIDomainName": "videoapp737e74da-737e74da",
     "authProvidersUserPool": [
         "Facebook",
         "Google"

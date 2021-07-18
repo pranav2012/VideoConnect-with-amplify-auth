@@ -1,7 +1,7 @@
 import VideoCard from "./VideoCard";
 import { useState, useEffect } from "react";
 import { API } from 'aws-amplify';
-import { listBlogs } from '../../graphql/queries';
+import { listPosts } from '../../graphql/queries';
 
 export default function PublicView({refresh}) {
 
@@ -12,8 +12,8 @@ export default function PublicView({refresh}) {
     }, [refresh]);
 
     const fetchPosts = async () => { // fetch all posted videos
-        const data = await API.graphql({query:listBlogs});
-        setposts(data.data.listBlogs.items);
+        const data = await API.graphql({query:listPosts});
+        setposts(data.data.listPosts.items);
     }
 
     return (

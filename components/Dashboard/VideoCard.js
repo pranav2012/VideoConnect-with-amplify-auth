@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { API, Storage } from 'aws-amplify';
-import { getBlog } from '../../graphql/queries';
+import { getPost } from '../../graphql/queries';
 
 export default function VideoCard({val}) {
 
@@ -15,10 +15,10 @@ export default function VideoCard({val}) {
             if(val.id) {
                 let id = val.id;
                 const data = await API.graphql({
-                    query:getBlog,
+                    query:getPost,
                     variables:{ id }
                    });
-                   setpost(data.data.getBlog);
+                   setpost(data.data.getPost);
                    setname(val.name);
                }
            }

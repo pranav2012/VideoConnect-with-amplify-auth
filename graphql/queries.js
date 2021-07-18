@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getPost = /* GraphQL */ `
+  query GetPost($id: ID!) {
+    getPost(id: $id) {
       id
       user
       name
@@ -14,13 +14,13 @@ export const getBlog = /* GraphQL */ `
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listPosts = /* GraphQL */ `
+  query ListPosts(
+    $filter: ModelPostFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         user
@@ -34,15 +34,15 @@ export const listBlogs = /* GraphQL */ `
     }
   }
 `;
-export const blogsByUser = /* GraphQL */ `
-  query BlogsByUser(
+export const postsByUser = /* GraphQL */ `
+  query PostsByUser(
     $user: String
     $sortDirection: ModelSortDirection
-    $filter: ModelBlogFilterInput
+    $filter: ModelPostFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    blogsByUser(
+    postsByUser(
       user: $user
       sortDirection: $sortDirection
       filter: $filter

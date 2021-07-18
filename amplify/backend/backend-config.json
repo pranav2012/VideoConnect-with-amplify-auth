@@ -1,14 +1,20 @@
 {
   "auth": {
-    "celebrythm7869cc6d": {
+    "videoapp737e74da": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
     }
   },
+  "storage": {
+    "videodata": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
   "api": {
-    "celebrythm": {
+    "videoapp": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -17,14 +23,14 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "public"
+              "description": "public api"
             }
           },
           "additionalAuthenticationProviders": [
             {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
-                "userPoolId": "authcelebrythm7869cc6d"
+                "userPoolId": "authvideoapp737e74da"
               }
             }
           ]
@@ -32,10 +38,5 @@
       }
     }
   },
-  "storage": {
-    "videos": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
-    }
-  }
+  "hosting": {}
 }

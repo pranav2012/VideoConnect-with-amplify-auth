@@ -1,7 +1,7 @@
 import VideoCard from "./VideoCard";
 import { useState, useEffect } from "react";
 import { Auth, API } from 'aws-amplify';
-import { blogsByUser } from '../../graphql/queries';
+import { postsByUser } from '../../graphql/queries';
 
 export default function UserView({refresh}) {
 
@@ -16,10 +16,10 @@ export default function UserView({refresh}) {
         let user = id.username;
         if(id) {
             const data = await API.graphql({
-                query:blogsByUser,
+                query:postsByUser,
                 variables:{ user }
             });
-            setposts(data.data.blogsByUser.items);
+            setposts(data.data.postsByUser.items);
         }
     }
 

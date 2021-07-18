@@ -1,5 +1,5 @@
-type  Blog @model 
-  @key(name: "blogsByUser", fields: ["user"], queryField: "blogsByUser")
+type  Post @model 
+  @key(name: "postsByUser", fields: ["user"], queryField: "postsByUser")
   @auth( rules: [
     {allow: owner, ownerField: "user"},
     {allow: public, operations: [read]}

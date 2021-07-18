@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { API, Storage, Auth } from 'aws-amplify';
-import { createBlog } from '../../graphql/mutations';
+import { createPost } from '../../graphql/mutations';
 
 export default function UploadVideo({ videouploadref, setrefresh }) {
     const [video, setvideo] = useState(null);
@@ -23,7 +23,7 @@ export default function UploadVideo({ videouploadref, setrefresh }) {
                 post.video_url = filename;
                 await Storage.put(filename, video);
                 await API.graphql({
-                    query: createBlog,
+                    query: createPost,
                     variables: { input: post },
                     authMode: "AMAZON_COGNITO_USER_POOLS"
                 })
