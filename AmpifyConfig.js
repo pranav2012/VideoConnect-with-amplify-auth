@@ -1,3 +1,2 @@
 import Amplify from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
+Amplify.configure(process.env.AWS_CONFIG);
