@@ -31,7 +31,7 @@ export default function UploadVideo({ videouploadref, setrefresh }) {
             }
         }
         CreatePost();
-    },[video]);
+    },[video,post,setrefresh]);
     
     return ( //hidden video input field
         <div>
