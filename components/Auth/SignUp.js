@@ -55,17 +55,15 @@ export default function SignUp({setauthpage,signup,error}) {
             <p className="mt-4 text-sm font-semibold text-center">or you can</p>
             <input onChange={(e) => setname(e.target.value)} value={name} className="mt-4 w-full px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-whiterounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring pr-10" type="text" name="name" placeholder="Name" />
             <p className="text-center text-red-600 text-xs">{nameerr}</p>
-            <br/>
             <input onChange={(e) => setemail(e.target.value)} value={email} className="mt-4 w-full px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-whiterounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring pr-10" type="email" name="email" placeholder="Email" />
             <p className="text-center text-red-600 text-xs">{emailerr}</p>
-            <br/>
             <input onChange={(e) => setpassword(e.target.value)} value={password} className="mt-4 w-full px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-whiterounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring pr-10" type="password" name="pass" placeholder="Password" />
             <p className="text-center text-red-600 text-xs">{passerr}</p>
             <p className="text-center text-red-600 text-xs">{error}</p>
             <div onClick={() => { checkvalid()}} className="mt-8 cursor-pointer mx-auto w-3/4 bg-red-700 p-1 px-2 rounded">
                 <p className="ml-2 text-white text-center text-sm">Create Account</p>
             </div>
-            <p className="mt-8 text-sm">Already have an account? <span onClick={()=>setauthpage('confirmUser')} className="cursor-pointer text-red-700">Sign In</span></p>
+            <p className="mt-8 text-sm">Already have an account? <span onClick={()=>setauthpage('signin')} className="cursor-pointer text-red-700">Sign In</span></p>
         </div>
     </div>
     )
